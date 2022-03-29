@@ -10,14 +10,14 @@ import { EventEmitter } from './EventEmitter';
 export const obj = {
     count: 0,
     handle() {
-        this.count++;
+        obj.count++;
     },
-    //Можете подсказать, что я тут сделал не так?
+
     subscribe() {
-        EventEmitter.on('click', this.handle());
+        EventEmitter.on('click', this.handle);
     },
     unsubscribe() {
-        EventEmitter.off('click', this.handle());
+        EventEmitter.off('click', this.handle);
     },
 };
 
